@@ -5,8 +5,9 @@ DoubleKey(sendKeys, timeout)
     Send, %sendKeys%
 }
 
-;double ctrl setting
-~LCtrl Up:: DoubleKey("{pause}", 200)
+;double ctrl setting, destory google desktop
+;~LCtrl Up:: DoubleKey("{pause}", 200)
+
 ; disalbe capslock
 CapsLock:: 
     if A_PriorHotkey = CapsLock
