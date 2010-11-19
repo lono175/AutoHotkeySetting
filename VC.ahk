@@ -67,7 +67,6 @@ Capslock & G::
 Capslock & T::
 	SetCapsLockState, OFF
 	Send \t
-	SetCapsLockState, OFF		
 	return
 
 ; Quake like command window, use console2 
