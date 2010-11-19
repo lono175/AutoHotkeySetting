@@ -84,26 +84,38 @@ Capslock & 5::
     IfWinNotExist, ahk_class Vim
        return 
     ELSE IfWinActive, ahk_class Vim
-      return	
+      WinMinimize 
+   	ELSE
+   	  WinActivate
+   	return
+
+
+
+Capslock & 4::
+    SetTitleMatchMode 2	
+    IfWinNotExist,  Microsoft Visual Studio
+       Run, devenv
+    ELSE IfWinActive, Microsoft Visual Studio
+      WinMinimize 
    	ELSE
    	  WinActivate
    	return
 
 ; Activate Matlab
-Capslock & 4::
-    IfWinNotExist, ahk_class SunAwtFrame
-       return 
-    ELSE IfWinActive, ahk_class SunAwtFrame
-      return	
-   	ELSE
-   	  WinActivate
-   	return
-; Activate Firefox
+;Capslock & 4::
+;    IfWinNotExist, ahk_class SunAwtFrame
+;       return 
+;    ELSE IfWinActive, ahk_class SunAwtFrame
+;      return	
+;   	ELSE
+;   	  WinActivate
+;   	return
+;Activate Firefox
 Capslock & 3::
     IfWinNotExist, ahk_class MozillaUIWindowClass
-       return 
+      Run, firefox
     ELSE IfWinActive, ahk_class MozillaUIWindowClass
-      return	
+      WinMinimize 
    	ELSE
    	  WinActivate
    	return
