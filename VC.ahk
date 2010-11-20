@@ -64,9 +64,10 @@ Capslock & G::
 	return
 
 ; switch to header
-Capslock & T::
+Capslock & t::
 	SetCapsLockState, OFF
 	Send \t
+	SetCapsLockState, OFF
 	return
 
 ; Quake like command window, use console2 
