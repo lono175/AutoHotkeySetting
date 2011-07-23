@@ -75,7 +75,8 @@ Capslock & t::
     IfWinNotExist, ahk_class Console_2_Main
         Run, console
     ELSE IfWinActive, ahk_class Console_2_Main
-      	WinMinimize 
+      	;WinMinimize 
+        ReturnPrevious()
    	else
    	     WinActivate
    	 return
@@ -85,39 +86,47 @@ Capslock & 5::
     IfWinNotExist, ahk_class Vim
        return 
     ELSE IfWinActive, ahk_class Vim
-      WinMinimize 
+      ;WinMinimize 
+      ReturnPrevious()
    	ELSE
    	  WinActivate
    	return
 
 
 
-Capslock & 4::
+; VC
+Capslock & 6::
     SetTitleMatchMode 2	
     IfWinNotExist,  Microsoft Visual Studio
        Run, devenv
     ELSE IfWinActive, Microsoft Visual Studio
-      WinMinimize 
-   	ELSE
+      ;WinMinimize 
+      ReturnPrevious()
+    ELSE
    	  WinActivate
    	return
 
 ; Activate Matlab
-;Capslock & 4::
-;    IfWinNotExist, ahk_class SunAwtFrame
-;       return 
-;    ELSE IfWinActive, ahk_class SunAwtFrame
-;      return	
-;   	ELSE
-;   	  WinActivate
-;   	return
+Capslock & 4::
+    IfWinNotExist, ahk_class SunAwtFrame
+       return 
+    ELSE IfWinActive, ahk_class SunAwtFrame
+      ReturnPrevious()
+    ELSE
+      WinActivate
+      return
 ;Activate Firefox
 Capslock & 3::
     IfWinNotExist, ahk_class MozillaUIWindowClass
       Run, firefox
     ELSE IfWinActive, ahk_class MozillaUIWindowClass
-      WinMinimize 
+      ;WinMinimize 
+      ReturnPrevious()
    	ELSE
    	  WinActivate
    	return
 
+ReturnPrevious()
+{
+    Send !{TAB}
+}
